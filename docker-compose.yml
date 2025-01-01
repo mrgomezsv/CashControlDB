@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: cashcontrol_db
+    restart: always
+    environment:
+      MYSQL_DATABASE: cashcontrol_db
+      MYSQL_USER: mrgomez
+      MYSQL_PASSWORD: Karin2100
+      MYSQL_ROOT_PASSWORD: K@r1n2100  # Cambia esto por una contraseña segura
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
